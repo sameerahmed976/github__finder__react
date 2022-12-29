@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
-import Footer from "./Footer";
 const Navbar = () => {
   return (
     <>
@@ -32,7 +31,6 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <Footer />
       <Outlet />
     </>
   );
