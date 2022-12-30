@@ -146,6 +146,7 @@ p {
   justify-content: space-around;
   position: sticky;
   top: 0;
+  width: 100%;
 }
 
 .nav__links {
@@ -251,6 +252,10 @@ p {
   }
 }
 
+.home__main {
+  min-height: 83.8vh;
+}
+
 // user
 .user {
   background-color: white;
@@ -260,7 +265,7 @@ p {
   justify-content: center;
   width: 90vw;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 2rem;
 
   &__card {
@@ -271,7 +276,7 @@ p {
     padding: 1rem;
     align-items: center;
     justify-self: center;
-    width: 350px;
+    width: 310px;
   }
   &__image {
     max-height: 6rem;
@@ -297,4 +302,63 @@ p {
       text-decoration: underline;
     }
   }
+}
+
+//
+.user__form {
+  display: grid;
+  grid-template-columns: 1fr 0.4fr;
+  width: 90vw;
+  margin: 0 auto;
+  border: 2px solid var(--secondary-color);
+  margin-top: 1rem;
+}
+
+.user__text {
+  padding: 0.2rem 0.5rem;
+  font-size: var(--font-size-h5);
+  display: block;
+  width: 100%;
+  border: 2px solid var(--secondary-color);
+  &::placeholder {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: grey;
+  }
+
+  &:active,
+  &:hover {
+    outline: inherit;
+    border: inherit;
+  }
+}
+
+.btn--go {
+  margin: 0;
+  border-radius: 0;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  background-color: black;
+  &:hover {
+    color: white;
+    background-color: #845ec2;
+    transform: translateY(0);
+  }
+}
+
+.btn--clear {
+  & {
+    color: white;
+    background-color: #845ec2;
+  }
+}
+
+.error__text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  color: red;
+  margin-bottom: 0;
 }

@@ -8,7 +8,7 @@ const User = ({ login, avatar_url }) => {
         <img src={avatar_url} alt="avatar" className="user__image" />
         <div className="user__content">
           <h2 className="user__title">{login}</h2>
-          <Link to={`/users/${login}`} className="user__visit">
+          <Link to={`/user/${login}`} className="user__visit">
             visit Profile
           </Link>
         </div>

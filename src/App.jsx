@@ -5,6 +5,7 @@ import About from "./Pages/About";
 import Error from "./Pages/Error";
 import Home from "./Pages/Home";
 import "./App.scss";
+import UserSingle from "./Components/UserSingle";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route to="/" element={<Navbar />}>
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/user/:login" element={<UserSingle />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>
