@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import { searchUsers } from "../Actions/action";
 import { useAlert } from "../Context/AlertContext";
 import { useAppContext } from "../Context/GithubContext";
 
 const UserSearch = () => {
-  const { searchUsers } = useAppContext();
+  const { dispatch } = useAppContext();
   const { setAlert } = useAlert();
 
   //   console.log(`* ~ file: UserSearch.jsx:6 ~ UserSearch ~ data`, data);
   const [text, setText] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (text == "") {
@@ -17,7 +18,11 @@ const UserSearch = () => {
       setAlert("Please enter something", "error");
     } else {
       //   console.log(text);
-      searchUsers(text);
+      dispatch({ type: "LOADING" });
+
+      const data = await searchUsers(text);
+      dispatch({ type: "DISPLAY", payload: data });
+
       setText("");
     }
   };

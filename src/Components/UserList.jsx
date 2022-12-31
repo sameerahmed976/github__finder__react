@@ -3,7 +3,7 @@ import { useAppContext } from "../Context/GithubContext";
 import User from "./User";
 
 const UserList = () => {
-  const { isLoading, data, handleClear } = useAppContext();
+  const { isLoading, data, dispatch } = useAppContext();
 
   if (isLoading) {
     return (
@@ -22,7 +22,10 @@ const UserList = () => {
       </section>
 
       {data.length > 0 && (
-        <button className="btn btn--clear" onClick={handleClear}>
+        <button
+          className="btn btn--clear"
+          onClick={() => dispatch({ type: "CLEAR" })}
+        >
           clear
         </button>
       )}
